@@ -1,0 +1,230 @@
+{
+  "schema_name": "schemashield_demo",
+  "tables": {
+    "customers": {
+      "columns": {
+        "created_at": {
+          "character_maximum_length": null,
+          "column_default": "CURRENT_TIMESTAMP",
+          "data_type": "timestamp with time zone",
+          "is_foreign_key": false,
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_unique": false,
+          "name": "created_at",
+          "numeric_precision": null,
+          "numeric_scale": null,
+          "ordinal_position": 5,
+          "referenced_column": null,
+          "referenced_table": null
+        },
+        "email": {
+          "character_maximum_length": 150,
+          "column_default": null,
+          "data_type": "character varying",
+          "is_foreign_key": false,
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_unique": true,
+          "name": "email",
+          "numeric_precision": null,
+          "numeric_scale": null,
+          "ordinal_position": 3,
+          "referenced_column": null,
+          "referenced_table": null
+        },
+        "full_name": {
+          "character_maximum_length": 100,
+          "column_default": null,
+          "data_type": "character varying",
+          "is_foreign_key": false,
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_unique": false,
+          "name": "full_name",
+          "numeric_precision": null,
+          "numeric_scale": null,
+          "ordinal_position": 2,
+          "referenced_column": null,
+          "referenced_table": null
+        },
+        "id": {
+          "character_maximum_length": null,
+          "column_default": null,
+          "data_type": "integer",
+          "is_foreign_key": false,
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_unique": false,
+          "name": "id",
+          "numeric_precision": 32,
+          "numeric_scale": 0,
+          "ordinal_position": 1,
+          "referenced_column": null,
+          "referenced_table": null
+        },
+        "phone": {
+          "character_maximum_length": 20,
+          "column_default": null,
+          "data_type": "character varying",
+          "is_foreign_key": false,
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_unique": false,
+          "name": "phone",
+          "numeric_precision": null,
+          "numeric_scale": null,
+          "ordinal_position": 4,
+          "referenced_column": null,
+          "referenced_table": null
+        }
+      },
+      "name": "customers"
+    },
+    "orders": {
+      "columns": {
+        "created_at": {
+          "character_maximum_length": null,
+          "column_default": "CURRENT_TIMESTAMP",
+          "data_type": "timestamp with time zone",
+          "is_foreign_key": false,
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_unique": false,
+          "name": "created_at",
+          "numeric_precision": null,
+          "numeric_scale": null,
+          "ordinal_position": 5,
+          "referenced_column": null,
+          "referenced_table": null
+        },
+        "customer_id": {
+          "character_maximum_length": null,
+          "column_default": null,
+          "data_type": "integer",
+          "is_foreign_key": true,
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_unique": false,
+          "name": "customer_id",
+          "numeric_precision": 32,
+          "numeric_scale": 0,
+          "ordinal_position": 2,
+          "referenced_column": "id",
+          "referenced_table": "customers"
+        },
+        "id": {
+          "character_maximum_length": null,
+          "column_default": null,
+          "data_type": "integer",
+          "is_foreign_key": false,
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_unique": false,
+          "name": "id",
+          "numeric_precision": 32,
+          "numeric_scale": 0,
+          "ordinal_position": 1,
+          "referenced_column": null,
+          "referenced_table": null
+        },
+        "order_total": {
+          "character_maximum_length": null,
+          "column_default": null,
+          "data_type": "numeric",
+          "is_foreign_key": false,
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_unique": false,
+          "name": "order_total",
+          "numeric_precision": 10,
+          "numeric_scale": 2,
+          "ordinal_position": 3,
+          "referenced_column": null,
+          "referenced_table": null
+        },
+        "status": {
+          "character_maximum_length": 20,
+          "column_default": "'pending'::character varying",
+          "data_type": "character varying",
+          "is_foreign_key": false,
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_unique": false,
+          "name": "status",
+          "numeric_precision": null,
+          "numeric_scale": null,
+          "ordinal_position": 4,
+          "referenced_column": null,
+          "referenced_table": null
+        }
+      },
+      "name": "orders"
+    },
+    "products": {
+      "columns": {
+        "id": {
+          "character_maximum_length": null,
+          "column_default": null,
+          "data_type": "integer",
+          "is_foreign_key": false,
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_unique": false,
+          "name": "id",
+          "numeric_precision": 32,
+          "numeric_scale": 0,
+          "ordinal_position": 1,
+          "referenced_column": null,
+          "referenced_table": null
+        },
+        "name": {
+          "character_maximum_length": 120,
+          "column_default": null,
+          "data_type": "character varying",
+          "is_foreign_key": false,
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_unique": false,
+          "name": "name",
+          "numeric_precision": null,
+          "numeric_scale": null,
+          "ordinal_position": 2,
+          "referenced_column": null,
+          "referenced_table": null
+        },
+        "price": {
+          "character_maximum_length": null,
+          "column_default": null,
+          "data_type": "numeric",
+          "is_foreign_key": false,
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_unique": false,
+          "name": "price",
+          "numeric_precision": 10,
+          "numeric_scale": 2,
+          "ordinal_position": 3,
+          "referenced_column": null,
+          "referenced_table": null
+        },
+        "stock_count": {
+          "character_maximum_length": null,
+          "column_default": "0",
+          "data_type": "integer",
+          "is_foreign_key": false,
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_unique": false,
+          "name": "stock_count",
+          "numeric_precision": 32,
+          "numeric_scale": 0,
+          "ordinal_position": 4,
+          "referenced_column": null,
+          "referenced_table": null
+        }
+      },
+      "name": "products"
+    }
+  }
+}
